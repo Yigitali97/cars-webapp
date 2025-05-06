@@ -26,14 +26,14 @@ The application consists of:
 
 The application is already deployed and can be accessed at:
 
-- Frontend URL: [http://cars-inventory-webapp.s3-website.us-east-1.amazonaws.com](http://cars-inventory-webapp.s3-website.us-east-1.amazonaws.com)
+- Frontend URL: [http://yigitali-1t.s3-website.ap-northeast-2.amazonaws.com/](http://yigitali-1t.s3-website.ap-northeast-2.amazonaws.com/)
 
 ### Running Locally
 
 1. Clone this repository:
 
    ```
-   git clone https://github.com/yourusername/cars-webapp.git
+   git clone https://github.com/Yigitali97/cars-webapp
    cd cars-webapp
    ```
 
@@ -44,13 +44,13 @@ The application is already deployed and can be accessed at:
    python app.py
    ```
 
-3. Open the `index.html` file in your browser:
+3. Open the `index_yigitali.html` file in your browser:
 
    ```
-   open index.html
+   open index_yigitali.html
    ```
 
-4. Note: The application connects to the remote API by default. To connect to a local backend, modify the `API_URL` in `script.js` to point to `http://localhost:8800/cars`.
+4. Note: The application connects to the remote API by default. To connect to a local backend, modify the `API_URL` in `script.js` to point to `http://localhost:8800/cars`. Replace the localhost with EC2 public URL
 
 ## Project Structure
 
@@ -63,8 +63,8 @@ The application is already deployed and can be accessed at:
 
 - **Static Frontend**: Amazon S3
 
-  - Bucket: cars-inventory-webapp
-  - URL: http://cars-inventory-webapp.s3-website.us-east-1.amazonaws.com
+  - Bucket: yigitali-1t
+  - URL: https://ap-northeast-2.console.aws.amazon.com/s3/buckets/yigitali-1t?region=ap-northeast-2&bucketType=general&tab=objects
 
 - **Backend API**: Amazon EC2
 
