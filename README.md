@@ -1,1 +1,93 @@
-# cars-webapp
+# Cars Inventory Web Application
+
+A fully-featured web application for managing a car inventory system. This application allows users to view, add, and delete cars from a database.
+
+## Overview
+
+This web application provides a simple and intuitive interface for managing a car inventory. It features:
+
+- Responsive design that works on desktop and mobile devices
+- Interactive data table displaying car inventory
+- Add new cars through a user-friendly modal form
+- Delete cars from the inventory
+- Real-time updates after any operation
+
+## Architecture
+
+The application consists of:
+
+- **Frontend**: Static HTML, CSS, and JavaScript files hosted on Amazon S3
+- **Backend**: RESTful API built with Flask, running on Amazon EC2 (IP: 3.35.132.211:8800)
+- **Database**: Amazon RDS PostgreSQL instance storing car inventory data
+
+## How to Run the Application
+
+### Accessing the Deployed Application
+
+The application is already deployed and can be accessed at:
+
+- Frontend URL: [http://cars-inventory-webapp.s3-website.us-east-1.amazonaws.com](http://cars-inventory-webapp.s3-website.us-east-1.amazonaws.com)
+
+### Running Locally
+
+1. Clone this repository:
+
+   ```
+   git clone https://github.com/yourusername/cars-webapp.git
+   cd cars-webapp
+   ```
+
+2. Set up the backend (requires Python 3.6+):
+
+   ```
+   pip install flask psycopg2-binary flask-cors
+   python app.py
+   ```
+
+3. Open the `index.html` file in your browser:
+
+   ```
+   open index.html
+   ```
+
+4. Note: The application connects to the remote API by default. To connect to a local backend, modify the `API_URL` in `script.js` to point to `http://localhost:8800/cars`.
+
+## Project Structure
+
+- `index_yigitali.html` - Main HTML structure of the application
+- `style.css` - CSS styling for the application
+- `script.js` - JavaScript code for interacting with the API and handling UI events
+- `app.py` - Flask backend application providing the RESTful API endpoints and database connectivity
+
+## Deployment Resources
+
+- **Static Frontend**: Amazon S3
+
+  - Bucket: cars-inventory-webapp
+  - URL: http://cars-inventory-webapp.s3-website.us-east-1.amazonaws.com
+
+- **Backend API**: Amazon EC2
+
+  - Instance IP: 3.35.132.211
+  - Port: 8800
+  - API Endpoint: http://3.35.132.211:8800/cars
+
+- **Database**: Amazon RDS PostgreSQL
+  - Instance: db-yigitali.clyucs4e44b4.ap-northeast-2.rds.amazonaws.com
+  - Database Name: postgres
+  - Table: tbl_yigitali_cars_data
+
+## API Endpoints
+
+The backend API provides the following endpoints:
+
+- `GET /cars` - Retrieve all cars
+- `POST /cars` - Add a new car
+- `DELETE /cars/:id` - Delete a car by ID
+
+## Technologies Used
+
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Backend**: Python with Flask (hosted on EC2)
+- **Database**: PostgreSQL (Amazon RDS)
+- **Deployment**: AWS S3, EC2, and RDS
