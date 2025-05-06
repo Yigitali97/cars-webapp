@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars Inventory</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚗 Cars Inventory</h1>
+
+      <!-- Add New Car Button -->
+      <div class="action-bar">
+        <button id="addCarBtn" class="add-btn">Add New Car</button>
+      </div>
+
+      <div class="table-container">
+        <table id="carsTable" class="styled-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Year</th>
+              <th>Color</th>
+              <th>Price ($)</th>
+              <th>Mileage</th>
+              <th>State</th>
+              <th>Condition</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <!-- Data will be inserted here dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal for Adding New Car -->
+    <div id="addCarModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Add New Car</h2>
+        <form id="addCarForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="brand">Brand*</label>
+              <input type="text" id="brand" name="brand" required />
+            </div>
+            <div class="form-group">
+              <label for="model">Model*</label>
+              <input type="text" id="model" name="model" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="year">Year*</label>
+              <input
+                type="number"
+                id="year"
+                name="year"
+                required
+                min="1900"
+                max="2099"
+              />
+            </div>
+            <div class="form-group">
+              <label for="color">Color*</label>
+              <input type="text" id="color" name="color" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="price">Price ($)*</label>
+              <input type="number" id="price" name="price" required min="0" />
+            </div>
+            <div class="form-group">
+              <label for="mileage">Mileage*</label>
+              <input
+                type="number"
+                id="mileage"
+                name="mileage"
+                required
+                min="0"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="state">State*</label>
+              <input type="text" id="state" name="state" required />
+            </div>
+            <div class="form-group">
+              <label for="country">Country*</label>
+              <input type="text" id="country" name="country" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="condition">Condition*</label>
+              <select id="condition" name="condition" required>
+                <option value="">Select condition</option>
+                <option value="New">New</option>
+                <option value="Excellent">Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+                <option value="Poor">Poor</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="title_status">Title Status</label>
+              <input type="text" id="title_status" name="title_status" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vin">VIN</label>
+              <input type="text" id="vin" name="vin" />
+            </div>
+            <div class="form-group">
+              <label for="lot">Lot</label>
+              <input type="text" id="lot" name="lot" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Add Car</button>
+            <button type="button" class="cancel-btn" id="cancelAddCar">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

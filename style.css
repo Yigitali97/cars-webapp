@@ -1,0 +1,263 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .styled-table {
+    font-size: 14px;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 10px 8px;
+  }
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 0.9em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 100%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.styled-table thead tr {
+  background-color: #4a90e2;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #4a90e2;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table-body {
+  display: block;
+  max-height: 70vh; /* 70% of viewport height */
+  overflow-y: auto; /* Add vertical scrollbar when needed */
+  background-color: transparent; /* Remove red background */
+}
+
+/* Fix width issues when tbody is display:block */
+.styled-table thead,
+.styled-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Style the table header to stay fixed */
+.styled-table thead {
+  width: calc(100% - 1em); /* Subtract scrollbar width */
+}
+
+/* Styles for delete button */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #ff3333;
+}
+
+.delete-btn:active {
+  background-color: #e60000;
+}
+
+/* Action Bar */
+.action-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+/* Add Car Button */
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 800px;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #555;
+}
+
+/* Form Styles */
+.form-row {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+input:focus,
+select:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #3a7bc8;
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.cancel-btn:hover {
+  background-color: #e5e5e5;
+}
+
+/* Responsive Form */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modal-content {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+}
