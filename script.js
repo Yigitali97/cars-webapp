@@ -1,4 +1,4 @@
-const API_URL = "http://3.35.132.211:8800/cars";
+const API_URL = "http://15.165.18.175:8800/cars";
 
 // Function to fetch and display all cars
 async function fetchCars() {
